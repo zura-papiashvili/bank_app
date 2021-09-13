@@ -1,0 +1,1142 @@
+{
+	"info": {
+		"_postman_id": "70f071ca-bffb-4868-af42-8925e3248c12",
+		"name": "bank app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "get accounts by  id Number",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsImVtYWlsIjoiY29zdHVtZXIzQGJhbmsuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwic3ViIjo2LCJpYXQiOjE2Mjc1Nzc3NDQsImV4cCI6MTYyNzU4NDk0NH0.nYn9jh1xsjn2jXBEG2Mgo1DQJ_21A0zn7ADoBF6MgUk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/accounts/00000000007",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"accounts",
+								"00000000007"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete account by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/accounts/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"accounts",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzY1MzU3OSwiZXhwIjoxNjI3NjYwNzc5fQ.hywisq1t9y-MYvRbQ_nWpcDUR_VlY7_Uc8I-nGuxnMs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/accounts/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"accounts",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "3",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "2",
+									"disabled": true
+								},
+								{
+									"key": "sortDir",
+									"value": "DESC",
+									"disabled": true
+								},
+								{
+									"key": "sortBy",
+									"value": "accountNumber",
+									"disabled": true
+								},
+								{
+									"key": "searchBy[accountNumber]",
+									"value": "782",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create account",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cardNumber\":\"0000000000000014\",\r\n    \"accountNumber\":\"0000000000000000000014\",\r\n    \"userId\":14,\r\n    \"balance\":16050.36\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/accounts/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"accounts",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get my accounts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImVtYWlsIjoib3BlcmF0b3IxQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo5LCJpYXQiOjE2Mjc2MjE5MDIsImV4cCI6MTYyNzYyOTEwMn0.nYSMbhcESmESPDZnZsW_-b4DBoz_OWwxtgzOac703Vw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/accounts/my/accounts",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"accounts",
+								"my",
+								"accounts"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transactions",
+			"item": [
+				{
+					"name": "create transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6ImN1c3RvbWVyMUBiYW5rLmNvbSIsInJvbGUiOiJDdXN0b21lciIsInN1YiI6MTIsImlhdCI6MTYyNzY1NDg4MSwiZXhwIjoxNjI3NjYyMDgxfQ.6F-5SogMfeLTjMG7xFOI-Ez5sB6oxLVENNmGniYjOfU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":10,\r\n    \"senderAccountId\":8,\r\n    \"receiverAccountId\":7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pending transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/transaction/pending_transactions",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"pending_transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirm  pending transaction",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/confirm/14",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"confirm",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reject  pending transaction Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/reject/14",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"reject",
+								"14"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deposit balance by operator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjksImVtYWlsIjoib3BlcmF0b3IxQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo5LCJpYXQiOjE2Mjc2MjE5MDIsImV4cCI6MTYyNzYyOTEwMn0.nYSMbhcESmESPDZnZsW_-b4DBoz_OWwxtgzOac703Vw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverAccountId\":5,\r\n    \"amount\":100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/balance/deposit",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"balance",
+								"deposit"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "witdraw balance by operator",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiYWRtaW4zQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo1LCJpYXQiOjE2Mjc1ODI2ODIsImV4cCI6MTYyNzU4OTg4Mn0.VFFBnbLLTrbCL18xQveWAKJbBwji58MWCyjMPvdpkRY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverAccountId\":1,\r\n    \"amount\":100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/transaction/balance/withdraw",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"balance",
+								"withdraw"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all my transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiY29zdHVtZXIxQGJhbmsuY29tIiwicm9sZSI6IkN1c3RvbWVyIiwic3ViIjo4LCJpYXQiOjE2Mjc2MjIyNjQsImV4cCI6MTYyNzYyOTQ2NH0.uTUGNRHpSpLQyr0Hgby9vT3CHQf1FRAcRHDrdvb9an0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/transaction/my",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								"my"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all transactions",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiYWRtaW4zQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo1LCJpYXQiOjE2Mjc1ODI2ODIsImV4cCI6MTYyNzU4OTg4Mn0.VFFBnbLLTrbCL18xQveWAKJbBwji58MWCyjMPvdpkRY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/transaction/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"transaction",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"customer1@bank.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "create payment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6ImN1c3RvbWVyMUBiYW5rLmNvbSIsInJvbGUiOiJDdXN0b21lciIsInN1YiI6MTIsImlhdCI6MTYyNzcxMzIyMywiZXhwIjoxNjI3Nzg1MjIzfQ.EHVd7AD0lFAohLXeRB6pckgQ6ReduO1c2LHp_URs4nU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"serviceId\": 1,\r\n    \"senderAccountId\":8,\r\n    \"amount\":195,\r\n    \"userId\":12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/payments/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"payments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  payments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/payments/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"payments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get  payments by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6ImN1c3RvbWVyMUBiYW5rLmNvbSIsInJvbGUiOiJDdXN0b21lciIsInN1YiI6MTIsImlhdCI6MTYyNzcxMzIyMywiZXhwIjoxNjI3Nzg1MjIzfQ.EHVd7AD0lFAohLXeRB6pckgQ6ReduO1c2LHp_URs4nU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/payments/8",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"payments",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "create service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"gas\",\r\n    \"type\":\"other\",\r\n    \"company\":2,\r\n    \"account\":9\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/services/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"services",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all services",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/services/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"services",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJlbWFpbCI6ImN1c3RvbWVyMUBiYW5rLmNvbSIsInJvbGUiOiJDdXN0b21lciIsInN1YiI6MTIsImlhdCI6MTYyNzcxMzIyMywiZXhwIjoxNjI3Nzg1MjIzfQ.EHVd7AD0lFAohLXeRB6pckgQ6ReduO1c2LHp_URs4nU",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/services/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update service",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"gas 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/services/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/services/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"services",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companies",
+			"item": [
+				{
+					"name": "create company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"Socar\",\r\n    \"email\":\"socar@bank.com\",\r\n    \"userId\":14\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/companies/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get company by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/companies/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all companies",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/companies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"companyName\":\"Socar Gas\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/companies/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete company",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/companies/2",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"companies",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/11",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiYWRtaW4zQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo1LCJpYXQiOjE2Mjc1NzQ2OTIsImV4cCI6MTYyNzU4MTg5Mn0.IAFAsib2h31CrwJVoXLKXiS8vyKoAzOo1_xz8-fi280",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\":\"socar\",\r\n    \"email\":\"socar@bank.com\",\r\n    \"idNumber\":\"00000000004\",\r\n    \"phoneNumber\":\"555111000\",\r\n    \"password\":\"123456\",\r\n    \"role\":\"Company\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								},
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user by id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/users/13",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"13"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjExLCJlbWFpbCI6Im9wZXJhdG9yMUBiYW5rLmNvbSIsInJvbGUiOiJPcGVyYXRvciIsInN1YiI6MTEsImlhdCI6MTYyNzcwODc1MCwiZXhwIjoxNjI3NzgwNzUwfQ.2EaSHZQJHie18oEJ-6KjvJi_6U2MFX9ItXVN3IaDWdA",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "{{operator}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phoneNumber\":\"25252525\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/12",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "operator",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsImVtYWlsIjoiYWRtaW4zQGJhbmsuY29tIiwicm9sZSI6Ik9wZXJhdG9yIiwic3ViIjo1LCJpYXQiOjE2Mjc1NzgzNDEsImV4cCI6MTYyNzU4NTU0MX0.Bc1uRHXFJ6P4Z-pOhwB2PnxMOAjKEce1rTZ051L3bh0"
+		}
+	]
+}
